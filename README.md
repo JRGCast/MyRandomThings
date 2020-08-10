@@ -1,5 +1,3 @@
-<h1> Hello! Welcome to my first website ever! Here, try my first pong, entirely in HTML. </h1>
-
 <html>
   <body>
    <canvas id ="folha" width="600" height="500"></canvas>
