@@ -1,9 +1,28 @@
 <html>
   <header>
-    <h1 style= "color: red"> BEM VINDO AO MEU PRIMEIRO JOGUINHO! DIVIRTA-SE </h1>
-  </header>
-  <body>
-   <canvas id ="folha" width="600" height="500"></canvas>
+    <title> JRGCast </title>
+     </header>
+  <body style= "background-color: cornsilk;">
+    <h1 class="titulo"> BEM VINDO AO MEU PRIMEIRO JOGUINHO! DIVIRTA-SE </h1>
+    <ul class="texto">
+      <li>Cada rebatida aumenta um pouco a velocidade da bola;</li> <br/> 
+      <li>Cada ponto perdido diminui o tamanho da raquete;</li> <br/>
+      <li>Quanto mais na ponta rebater, maior o efeito.</li>  <br/>
+    </ul>
+     <canvas id ="folha" width="600" height="500"></canvas>
+     <style>
+      .titulo{
+         color: red
+       }
+       .texto{
+         color: blue;
+         text-align: start;  
+         float: right;
+         margin: 100px 330px 100px 0px;
+         border: solid red;
+         padding: 1px solid;
+       }
+     </style>
     <script>
      //window.onload carrega os primeiros comandos.
       window.onload = function() {
@@ -16,7 +35,7 @@
           areaDesenho = folhaDesenho.getContext("2d");
           pontuacaoPlayer1 = pontuacaoPlayer2 = 0
           //Variáveis se tornam globais quando estiverem dentro de uma função e não tiverem 'var';
-          posicaoPlayer1 = posicaoPlayer2 = 40;
+          posicaoPlayer1 = posicaoPlayer2 = 300;
           posicaoXBola = posicaoYBola = 10;
           velocidadeXBola = velocidadeYBola = 10;
           larguraDoCampo = 600;
@@ -65,6 +84,7 @@
           areaDesenho.fillRect(larguraDoCampo - espessuraRaquetes,posicaoPlayer2,espessuraRaquetes,alturaRaquetePlayer2);
 
           //Escrever pontuação dos Players:
+          areaDesenho.fillStyle= 'yellow'
           areaDesenho.fillText("Player 1 está com: " + pontuacaoPlayer1 + " pontos", 100,20); //Por exemplo aqui utilizou-se a cor anterior ('#ffff33).
           areaDesenho.fillText("Player 2 (A.I.)está com: " + pontuacaoPlayer2 + " pontos", larguraDoCampo-250,20);
 
